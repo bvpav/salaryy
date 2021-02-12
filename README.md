@@ -2,4 +2,4 @@
 
 > A test app to see if we can do stuff with git
 
-> Whats up 
+> Whats up
