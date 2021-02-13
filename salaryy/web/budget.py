@@ -6,6 +6,7 @@ bp = Blueprint('budget', __name__)
 
 
 @bp.route('/')
+@bp.route('/dashboard')
 @login_required
 def dashboard():
     return render_template('budget/dashboard.html')
