@@ -50,7 +50,7 @@ $ . venv/bin/activate
 Given that you've installed the package and all it's dependencies, you can simply run the following:
 
 ```shell
-$ export FLASK_APP=salaryy_web
+$ export FLASK_APP=salaryy/web
 $ export FLASK_ENV=development
 $ flask run
 ```
