@@ -21,6 +21,9 @@ def create_app():
     except OSError:
         pass
 
+    from . import db
+    db.init_app(app)
+
     from . import budget
     app.register_blueprint(budget.bp)
 

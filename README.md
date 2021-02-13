@@ -52,6 +52,7 @@ Given that you've installed the package and all it's dependencies, you can simpl
 ```shell
 $ export FLASK_APP=salaryy/web
 $ export FLASK_ENV=development
+$ flask init-db # Initialize the database
 $ flask run
 ```
 
