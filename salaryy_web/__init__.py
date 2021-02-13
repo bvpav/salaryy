@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 def create_app():
@@ -24,7 +24,11 @@ def create_app():
     # A basic landing page
     @app.route('/')
     def hello():
-        return 'hello'
+        return render_template('dashboard.html')
+
+    @app.route('/detail/<string:employee_name>')
+    def detail(employee_name):
+        return render_template('detail.html')
 
     return app
 
