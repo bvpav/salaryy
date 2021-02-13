@@ -28,7 +28,7 @@ def create_app():
 
     @app.route('/detail/<string:employee_name>')
     def detail(employee_name):
-        return render_template('detail.html')
+        return render_template('detail.html', employee_name=employee_name)
 
     return app
 
