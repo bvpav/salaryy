@@ -1,0 +1,4 @@
+include salaryy_web/schema.sql
+graft salaryy_web/static
+graft salaryy_web/templates
+global-exclude *.pyc
