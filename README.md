@@ -43,7 +43,21 @@ $ . venv/bin/activate
 (venv) $ pip install --editable .
 ```
 
-<!-- TODO: document how to run the different interfaces -->
+## Running
+
+### Run the web interface
+
+Given that you've installed the package and all it's dependencies, you can simply run the following:
+
+```shell
+$ export FLASK_APP=salaryy_web
+$ export FLASK_ENV=development
+$ flask run
+```
+
+> Note that if you're on windows, you have to use `set` instead of `export`
+
+When the server is running, simply open a web browser and visit [](http://localhost:5000/) to see the webapp.
 
 ## License
 
