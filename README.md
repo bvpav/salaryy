@@ -57,7 +57,7 @@ $ flask run
 
 > Note that if you're on windows, you have to use `set` instead of `export`
 
-When the server is running, simply open a web browser and visit [](http://localhost:5000/) to see the webapp.
+When the server is running, simply open a web browser and visit [http://localhost:5000/](http://localhost:5000/) to see the webapp.
 
 ## License
 
