@@ -17,6 +17,34 @@ As of right now, `salaryy` pretty much has no features.
 - calculate each employee's salary for this month
 - calculate your monthly income and expenses
 
+## Installing
+
+In order to install `salaryy`, you need Python 3
+
+### Using a POSIX-compliant shell (such as `bash`)
+
+First, clone this repository.
+
+```shell
+$ git clone https://github.com/bvpav/salaryy
+$ cd salaryy
+```
+
+#### Create a virtual environment (optional, but recommended)
+
+```shell
+$ python -m venv venv
+$ . venv/bin/activate
+(venv) $
+```
+#### Install the package for development
+
+```shell
+(venv) $ pip install --editable .
+```
+
+<!-- TODO: document how to run the different interfaces -->
+
 ## License
 
 `salaryy` is licensed under the GNU General Public License version 3
