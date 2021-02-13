@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask
 
 
 def create_app():
@@ -21,14 +21,8 @@ def create_app():
     except OSError:
         pass
 
-    # A basic landing page
-    @app.route('/')
-    def hello():
-        return render_template('dashboard.html')
-
-    @app.route('/detail/<string:employee_name>')
-    def detail(employee_name):
-        return render_template('detail.html', employee_name=employee_name)
+    from . import budget
+    app.register_blueprint(budget.bp)
 
     return app
 

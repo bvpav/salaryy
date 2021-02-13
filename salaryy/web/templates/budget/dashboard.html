@@ -25,13 +25,13 @@
         <div class="personInfo">
             <h1>John Smith</h1>
             <p>$1200</p>
-            <a href="detail/John Smith">More Info</a>
+	    <a href="{{ url_for('budget.detail', employee_name='John Smith') }}">More Info</a>
         </div>
 
         <div class="personInfo">
             <h1>Arthur Hooray</h1>
             <p>$1200</p>
-            <a href="detail/Arthur Hooray">More Info</a>
+            <a href="{{ url_for('budget.detail', employee_name='Arthur Hooray') }}">More Info</a>
 
         </div>
 
@@ -39,7 +39,7 @@
 
             <h1>Mark Nomen</h1>
             <p>$1200</p>
-            <a href="detail/Mark Nomen">More Info</a>
+            <a href="{{ url_for('budget.detail', employee_name='Mark Nomen') }}">More Info</a>
 
         </div>
     </div>
