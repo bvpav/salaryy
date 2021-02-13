@@ -1,0 +1,15 @@
+<!-- TODO: Make this actual html -->
+
+{% for message in get_flashed_messages() %}
+<p style="color: red">{{ message }}</p>
+{% endfor %}
+
+<form method="post">
+	<label for="username">Username</label>
+	<input name="username" id="username" required>
+	<label for="password">Password</label>
+	<input type="password" name="password" id="username" required>
+	<input type="submit" value="Log in">
+</form>
+
+<p>Don't have an accout? <a href="{{ url_for('auth.register') }}">Sign up</a></p>

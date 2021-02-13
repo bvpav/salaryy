@@ -6,8 +6,8 @@ CREATE TABLE user (
 	username TEXT UNIQUE NOT NULL,
 	password TEXT NOT NULL,
 
-	income REAL NOT NULL,
-	employee_salary REAL NOT NULL
+	income REAL NOT NULL DEFAULT 0.0,
+	employee_salary REAL NOT NULL DEFAULT 0.0
 );
 
 CREATE TABLE employee (

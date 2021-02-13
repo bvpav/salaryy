@@ -21,7 +21,7 @@ def close_db(e=None):
     """Close the current database connection, if one exists. Called after every request."""
     db = g.pop('db', None)
 
-    if db is None:
+    if db is not None:
         db.close()
 
 
