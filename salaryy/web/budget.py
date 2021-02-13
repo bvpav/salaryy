@@ -1,9 +1,8 @@
 from flask import Blueprint, render_template
 
-bp = Blueprint('budget', __name__, url_prefix='/hamburghear')
+bp = Blueprint('budget', __name__)
 
 
-# A basic landing page
 @bp.route('/')
 def dashboard():
     return render_template('dashboard.html')
