@@ -30,5 +30,8 @@ def create_app():
     from . import budget
     app.register_blueprint(budget.bp)
 
+    from . import employee
+    app.register_blueprint(employee.bp)
+
     return app
 

@@ -11,9 +11,3 @@ bp = Blueprint('budget', __name__)
 def dashboard():
     return render_template('budget/dashboard.html')
 
-
-@bp.route('/detail/<string:employee_name>')
-@login_required
-def detail(employee_name):
-    return render_template('budget/detail.html', employee_name=employee_name)
-
