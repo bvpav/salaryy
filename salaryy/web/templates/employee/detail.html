@@ -14,8 +14,10 @@
 <body>
     <h1>{{ employee['name'] }}</h1>
     <p>Current salary: ${{ employee['salary'] }}</p>
-    <a href="#">Edit</a>
-    <!-- Add Edit Button -->
+    <a href="{{ url_for('employee.edit', employee_name=employee['name']) }}">Edit</a>
+    <form method="post" action="{{ url_for('employee.delete', employee_name=employee['name']) }}">
+	    <input type="submit" value="Delete"> <!-- has to be a form, otherwise search engines would click this link and maybe delete it, idk -->
+    </form>
 </body>
 
 </html>

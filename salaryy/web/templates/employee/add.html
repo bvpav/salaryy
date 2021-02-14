@@ -1,12 +1,17 @@
 <!-- TODO: Make this actual html -->
+<!-- NOTE: This html file is used both for creating and updating employees -->
+
+{% for message in get_flashed_messages() %}
+	<p style="color: red">{{ message }}</p>
+{% endfor %}
 
 <form method="post">
 	<label for="employee_name">Name</label>
-	<input name="employee_name" id="employee_name" required>
+	<input name="employee_name" id="employee_name" required {% if employee %} value="{{ employee['name'] }}" {% endif %} >
 	
 	<br>
 	<label for="employee_salary">Salary</label>
-	<input type="number" min="0.00" step="0.01" name="employee_salary" id="employee_salary">
+	<input type="number" min="0.00" step="0.01" name="employee_salary" id="employee_salary" {% if employee %} value="{{ employee['salary'] }}" {% endif %} >
 	<br>
-	<input type="submit" value="Save">
+	<input type="submit" value="{{ 'Save' if employee else 'Add' }}">
 </form>
