@@ -1,15 +1,34 @@
 <!-- TODO: Make this actual html -->
+<!DOCTYPE html>
+<html lang="en">
 
-{% for message in get_flashed_messages() %}
-<p style="color: red">{{ message }}</p>
-{% endfor %}
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
 
-<form method="post">
-	<label for="username">Username</label>
-	<input name="username" id="username" required>
-	<label for="password">Password</label>
-	<input type="password" name="password" id="username" required>
-	<input type="submit" value="Register">
-</form>
+<body>
 
-<p>Already have an accout? <a href="{{ url_for('auth.login') }}">Log In</a></p>
+	<div class="container">
+		{% for message in get_flashed_messages() %}
+		<p style="color: red">{{ message }}</p>
+		{% endfor %}
+
+		<form method="post">
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username" required>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="username" required>
+			<input id="register" type="submit" value="Register">
+		</form>
+
+		<p>Already have an accout? <a href="{{ url_for('auth.login') }}">Log In</a></p>
+	</div>
+</body>
+
+</html>

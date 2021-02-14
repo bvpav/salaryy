@@ -10,22 +10,28 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
 </head>
 
 <body>
-	{% for message in get_flashed_messages() %}
-	<p style="color: red">{{ message }}</p>
-	{% endfor %}
 
-	<form method="post">
-		<label for="username">Username</label>
-		<input name="username" id="username" required>
-		<label for="password">Password</label>
-		<input type="password" name="password" id="username" required>
-		<input type="submit" value="Log in">
-	</form>
+	<div class="container">
+		{% for message in get_flashed_messages() %}
+		<p style="color: red">{{ message }}</p>
+		{% endfor %}
 
-	<p>Don't have an accout? <a href="{{ url_for('auth.register') }}">Sign up</a></p>
+
+
+		<form method="post">
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username" required>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="username" required>
+			<input type="submit" value="Log in">
+		</form>
+
+		<p>Don't have an accout? <a href="{{ url_for('auth.register') }}">Sign up</a></p>
+	</div>
 </body>
 
 </html>
