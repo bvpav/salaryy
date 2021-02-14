@@ -21,13 +21,18 @@
     <h1>...</h1>
     <hr>
 
+    {% if not employees %}
+    <p>bruh you have no employees <a href="{{ url_for('employee.add') }}">add some here</a></p>
+    {% else %}
     <div id="people">
+	{% for employee in employees %}
         <div class="personInfo">
-            <h1>John Smith</h1>
-            <p>$1200</p>
-            <a href="{{ url_for('employee.detail', employee_name='John Smith') }}">More Info</a>
+		<h1>{{ employee['name'] }}</h1>
+		<p>${{ employee['salary'] }}</p>
+		<a href="{{ url_for('employee.detail', employee_name=employee['name']) }}">More Info</a>
         </div>
-
+	{% endfor %}
+	<!-- (delete this maybe)
         <div class="personInfo">
             <h1>Arthur Hooray</h1>
             <p>$1200</p>
@@ -42,7 +47,9 @@
             <a href="{{ url_for('employee.detail', employee_name='Mark Nomen') }}">More Info</a>
 
         </div>
+	-->
     </div>
+    {% endif %}
 </body>
 
 </html>
