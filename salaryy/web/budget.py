@@ -15,6 +15,5 @@ def dashboard():
         'SELECT * FROM employee WHERE employer_id = ?',
         (g.user['id'],)
     ).fetchall()
-    print(employees[0]['name'])
     return render_template('budget/dashboard.html', employees=employees)
 
