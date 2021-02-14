@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ employee_name }}</title>
+    <title>{{ employee['name'] }}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='detail.css') }}">
 </head>
 
 <body>
-    <h1>{{ employee_name }}</h1>
-    <p>Current salary: $1000</p>
+    <h1>{{ employee['name'] }}</h1>
+    <p>Current salary: ${{ employee['salary'] }}</p>
     <a href="#">Edit</a>
     <!-- Add Edit Button -->
 </body>
