@@ -21,6 +21,8 @@
     <h1>...</h1>
     <hr>
 
+    <a href="{{ url_for('employee.add') }}">+ Add</a>
+
     {% if not employees %}
     <p>bruh you have no employees <a href="{{ url_for('employee.add') }}">add some here</a></p>
     {% else %}
@@ -28,8 +30,12 @@
 	{% for employee in employees %}
         <div class="personInfo">
 		<h1>{{ employee['name'] }}</h1>
-		<p>${{ employee['salary'] }}</p>
+		<p>${{ employee['salary'] or g.user['employee_salary'] }}</p>
 		<a href="{{ url_for('employee.detail', employee_name=employee['name']) }}">More Info</a>
+		<a href="{{ url_for('employee.edit', employee_name=employee['name']) }}">Edit</a>
+		<form method="post" action="{{ url_for('employee.delete', employee_name=employee['name']) }}">
+			<input type="submit" value="Delete">
+		</form>
         </div>
 	{% endfor %}
 	<!-- (delete this maybe)
