@@ -1,4 +1,4 @@
-include salaryy_web/schema.sql
-graft salaryy_web/static
-graft salaryy_web/templates
+include salaryy/web/schema.sql
+graft salaryy/web/static
+graft salaryy/web/templates
 global-exclude *.pyc
