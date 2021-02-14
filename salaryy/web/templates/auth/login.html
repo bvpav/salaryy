@@ -1,15 +1,31 @@
 <!-- TODO: Make this actual html -->
+<!DOCTYPE html>
+<html lang="en">
 
-{% for message in get_flashed_messages() %}
-<p style="color: red">{{ message }}</p>
-{% endfor %}
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
 
-<form method="post">
-	<label for="username">Username</label>
-	<input name="username" id="username" required>
-	<label for="password">Password</label>
-	<input type="password" name="password" id="username" required>
-	<input type="submit" value="Log in">
-</form>
+<body>
+	{% for message in get_flashed_messages() %}
+	<p style="color: red">{{ message }}</p>
+	{% endfor %}
 
-<p>Don't have an accout? <a href="{{ url_for('auth.register') }}">Sign up</a></p>
+	<form method="post">
+		<label for="username">Username</label>
+		<input name="username" id="username" required>
+		<label for="password">Password</label>
+		<input type="password" name="password" id="username" required>
+		<input type="submit" value="Log in">
+	</form>
+
+	<p>Don't have an accout? <a href="{{ url_for('auth.register') }}">Sign up</a></p>
+</body>
+
+</html>
