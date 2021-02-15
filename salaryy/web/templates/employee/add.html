@@ -11,7 +11,7 @@
 	
 	<br>
 	<label for="employee_salary">Salary</label>
-	<input type="number" min="0.00" step="0.01" name="employee_salary" id="employee_salary" {% if employee %} value="{{ employee['salary'] }}" {% endif %} >
+	<input type="number" min="0.00" step="0.01" placeholder="{{ g.user['employee_salary'] }}" name="employee_salary" id="employee_salary" {% if employee %} value="{{ employee['salary'] }}" {% endif %} >
 	<br>
 	<input type="submit" value="{{ 'Save' if employee else 'Add' }}">
 </form>
